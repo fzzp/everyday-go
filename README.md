@@ -6,7 +6,7 @@
 
 根据实际需求去写Go代码。
 
-### 001_io_demo 
+### 0001_io_demo 
 
 如何将基础数据（string/struct ...）转为实现 io.Reader 或 io.Writer 接口的数据
 
@@ -50,3 +50,44 @@ total 45704
 -rw-r--r--@ 1 lightsaid  staff   1.5K Oct 14 23:07 main.go
 ➜  analyze git:(master) ✗ 
 ```
+
+
+### 0004_worker_pool
+
+Worker Pool（工作池/协程池）模式是一种常见的并发设计模式，主要用于控制并发任务的数量，提高系统性能，以及更有效地管理系统资源。
+
+实现一个简单的Worker-Pool模式；
+
+工作上肯定是用 [ants](https://github.com/panjf2000/ants) 控制并发数量。
+[ants文档](https://github.com/panjf2000/ants/blob/v2.10.0/README_ZH.md)
+[ants解读](https://mp.weixin.qq.com/s/Uctu_uKHk5oY0EtSZGUvsA)
+
+`简单回顾一下channel：`
+    
+非缓冲通道：make(chan T)
+>>>
+    一次发送，一次接受，都是阻塞的
+
+缓冲通道：make(chan T, capacity)
+>>>
+    发送：缓冲区数据满了，才会阻塞
+    接收：缓冲区数据空了，才会阻塞
+
+双向通道：
+>>>
+    chan <- data 发送数据，写入
+    data <- chan 接收数据，读取
+
+定向（单向）通道：只能接受或者发送数据
+>>> 
+    chan <- T,  只写
+    <- chan T,  只读
+
+定向通道定义：
+```go
+ch1 := make(chan<- int) // 只写
+ch2 := make(<-chan int) // 只读
+```
+
+
+
