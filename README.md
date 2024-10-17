@@ -89,5 +89,18 @@ ch1 := make(chan<- int) // 只写
 ch2 := make(<-chan int) // 只读
 ```
 
+### 0005_reflect 
 
+复盘反射。
+
+reflect.TypeOf -> reflect.Type
+
+reflect.Type 
+> 是和类型相关的操作，如：查看字段信息(个数、名字、tag等)，根据类型创建新的对象
+
+
+reflect.ValueOf -> reflect.Value
+
+reflect.Value
+> 是和值相关的操作，获取值，设置新的值，调用方法
 
