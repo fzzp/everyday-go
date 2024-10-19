@@ -128,8 +128,24 @@ go build -o=app 后，添加可执行权 chmod +x app，再移到课程里，执
 
 SOLID 设计原则
 
-TODO: 长期补充内容
+TODO: 需要长期补充内容
 
+
+### 0008_http_cli
+
+实现一个命令行工具，类似curl的基础功能。
+
+`预计划实现`
+
+[ ] -X [请求方法：GET/POST/DELETE/PUT...]
+
+[ ] -d [请求发送的json数据]
+
+[ ] -H [自定义header]
+
+[ ] -o [将请求结果输出到指定文件]
+
+[ ] -c [输出请求配置]
 
 
 
