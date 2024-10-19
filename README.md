@@ -123,3 +123,14 @@ Language: en  (删除此行)
 ```
 
 go build -o=app 后，添加可执行权 chmod +x app，再移到课程里，执行即可。
+
+### 0007_solid_design
+
+SOLID 设计原则
+
+TODO: 长期补充内容
+
+
+
+
+
